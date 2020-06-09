@@ -1,9 +1,9 @@
 import mongoose from "mongoose";
-import ValueSchema from "../models/Value";
+import EnemySchema from "../models/Enemy";
 import ProfileSchema from "../models/Profile";
 
 class DbContext {
-  Values = mongoose.model("Value", ValueSchema);
+  Enemies = mongoose.model("Enemy", EnemySchema);
   Profile = mongoose.model("Profile", ProfileSchema);
 }
 
