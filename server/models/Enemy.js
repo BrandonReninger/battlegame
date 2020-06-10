@@ -14,7 +14,7 @@ const Enemy = new Schema({
         type: String,
         required: true
     }],
-    pictrue: {
+    imgUrl: {
         type: String,
         required: true
     },

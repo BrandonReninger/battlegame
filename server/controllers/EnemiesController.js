@@ -10,12 +10,14 @@ export class EnemiesController extends BaseController {
         super("api/enemies");
         this.router
             .get("", this.getAll)
+            // .get("/:id", this.getById)
             .use(auth0Provider.getAuthorizedUserInfo)
             .post("", this.create);
     }
     async getAll(req, res, next) {
         try {
-            return res.send(["value1", "value2"]);
+            let data = await enemiesService.getAll()
+            return res.send(data)
         } catch (error) {
             next(error);
         }

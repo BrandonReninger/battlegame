@@ -11,17 +11,17 @@ class EnemiesService {
             "name",
             "hp",
             "attacks",
-            "picture"
+            "imgUrl"
         );
         return enemies;
     }
-    async findById(id) {
-        let enemy = await dbContext.Enemies.findById(id);
-        if (!enemy) {
-            throw new BadRequest("Invalid Id");
-        }
-        return enemy;
-    }
+    // async findById(id) {
+    //     let enemy = await dbContext.Enemies.findById(id);
+    //     if (!enemy) {
+    //         throw new BadRequest("Invalid Id");
+    //     }
+    //     return enemy;
+    // }
 }
 
 export const enemiesService = new EnemiesService();
