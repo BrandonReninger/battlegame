@@ -6,8 +6,14 @@ import {
 } from "../utils/Errors";
 
 class EnemiesService {
-    async getAll(query = {}) {
-        let enemies = await dbContext.Enemies.find(query).populate(
+    async create(rawData) {
+        let data = await dbContext.Enemies.create(rawData)
+        return data
+    }
+    async getAll(userEmail) {
+        let enemies = await dbContext.Enemies.find({
+            creatorEmail: userEmail
+        }).populate(
             "name",
             "hp",
             "attacks",
