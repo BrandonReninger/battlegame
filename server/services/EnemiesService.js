@@ -13,12 +13,9 @@ class EnemiesService {
     async getAll(userEmail) {
         let enemies = await dbContext.Enemies.find({
             creatorEmail: userEmail
-        }).populate(
-            "name",
-            "hp",
-            "attacks",
-            "imgUrl"
-        );
+        }) //.populate(
+        //"name"
+        // );
         return enemies;
     }
     // async findById(id) {

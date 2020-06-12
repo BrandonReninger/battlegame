@@ -1,13 +1,21 @@
 import mongoose from "mongoose";
-import { dbContext } from "../db/DbContext";
+import {
+  dbContext
+} from "../db/DbContext";
 
 class CleanupService {
   async cleanupAsync() {
     await Promise.allSettled([
-      dbContext.Bugs.deleteMany({ reportedBy: "D$" }),
-      dbContext.Notes.deleteMany({ reportedBy: "D$" })
+      dbContext.Enemies.deleteMany({
+        reportedBy: "D$"
+      }),
+      dbContext.Profile.deleteMany({
+        reportedBy: "D$"
+      })
     ]);
-    return { message: "Deleted all test data!" };
+    return {
+      message: "Deleted all test data!"
+    };
   }
 }
 

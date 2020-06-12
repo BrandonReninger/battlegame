@@ -10,7 +10,7 @@ const Enemy = new Schema({
         type: Number,
         required: true
     },
-    attacks: [{
+    moves: [{
         type: String,
         required: true
     }],
