@@ -18,13 +18,27 @@ class EnemiesService {
         // );
         return enemies;
     }
-    // async findById(id) {
-    //     let enemy = await dbContext.Enemies.findById(id);
-    //     if (!enemy) {
-    //         throw new BadRequest("Invalid Id");
-    //     }
-    //     return enemy;
-    // }
+
+    async getById(id, email) {
+        let enemy = await dbContext.Enemies.findOne({
+            _id: id,
+            creatorEmail: email
+        })
+        if (!enemy) {
+            throw new BadRequest("Invalid Id or this is not yours.")
+        }
+        return enemy
+    }
+
+    async delete(id, email) {
+        let data = await dbContext.Enemies.findOneAndRemove({
+            _id: id,
+            creatorEmail: email
+        })
+        if (!data) {
+            throw new BadRequest("Invalid Id or you did not create this character!")
+        }
+    }
 }
 
 export const enemiesService = new EnemiesService();
