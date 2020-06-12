@@ -1,12 +1,19 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <h1>Welcome to Your Vue.js App</h1>
+    <h1>Welcome to Bad Person beatterupper</h1>
+    <create-enemy></create-enemy>
   </div>
 </template>
 
 <script>
+import CreateEnemy from "../components/CreateEnemy";
 export default {
-  name: "home"
+  name: "home",
+  computed: {
+    enemy() {
+      return this.$store.state.enemies;
+    }
+  },
+  components: { CreateEnemy }
 };
 </script>
