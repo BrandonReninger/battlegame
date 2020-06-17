@@ -10,9 +10,9 @@ class EnemiesService {
         let data = await dbContext.Enemies.create(rawData)
         return data
     }
-    async getAll(userEmail) {
+    async getAll() {
         let enemies = await dbContext.Enemies.find({
-            creatorEmail: userEmail
+
         }) //.populate(
         //"name"
         // );

@@ -50,7 +50,7 @@ export default new Vuex.Store({
       commit
     }) {
       try {
-        let res = await api.get("enemies");
+        let res = await api.get('enemies');
         commit("setEnemies", res.data)
       } catch (error) {
         console.error(error)
