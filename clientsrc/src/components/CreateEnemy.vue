@@ -18,7 +18,7 @@
             type="text"
             name="move"
             placeholder="enter attack name..."
-            v-model="newEnemy.move"
+            v-model="newEnemy.move1"
             required
           />
         </div>
@@ -28,7 +28,7 @@
             type="text"
             name="move"
             placeholder="enter attack name..."
-            v-model="newEnemy.move"
+            v-model="newEnemy.move2"
             required
           />
         </div>
@@ -38,7 +38,7 @@
             type="text"
             name="move"
             placeholder="enter attack name..."
-            v-model="newEnemy.move"
+            v-model="newEnemy.move3"
             required
           />
         </div>
@@ -68,7 +68,11 @@ export default {
     };
   },
   computed: {},
-  methods: {},
+  methods: {
+    createEnemy() {
+      this.$store.dispatch("createEnemy", this.newEnemy);
+    }
+  },
   components: {}
 };
 </script>

@@ -55,6 +55,17 @@ export default new Vuex.Store({
       } catch (error) {
         console.error(error)
       }
+    },
+
+    async createEnemy({
+      dispatch
+    }, newEnemy) {
+      try {
+        let res = await api.post('enemies', newEnemy)
+        dispatch("getEnemies")
+      } catch (error) {
+        console.error(error)
+      }
     }
 
   }

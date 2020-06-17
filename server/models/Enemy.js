@@ -10,10 +10,18 @@ const Enemy = new Schema({
         type: Number,
         required: true
     },
-    moves: [{
+    move1: {
         type: String,
         required: true
-    }],
+    },
+    move2: {
+        type: String,
+        required: true
+    },
+    move3: {
+        type: String,
+        required: true
+    },
     imgUrl: {
         type: String,
         required: true

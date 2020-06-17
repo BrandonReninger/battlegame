@@ -2,7 +2,9 @@
   <div class="home">
     <h1>Welcome to Bad Person beatterupper</h1>
     <create-enemy></create-enemy>
-    <Enemy v-for="enemy in enemies" :key="enemy._id" :enemyData="enemyData"></Enemy>
+    <div class="row">
+      <Enemy v-for="enemy in enemies" :key="enemy._id" :enemyData="enemy"></Enemy>
+    </div>
   </div>
 </template>
 
@@ -16,6 +18,7 @@ export default {
   },
   computed: {
     enemies() {
+      console.log(this.$store.state.enemies);
       return this.$store.state.enemies;
     }
   },
