@@ -1,7 +1,7 @@
 <template>
-  <div class="Enemy">
+  <div class="Enemy col-3">
     <div class="card" style="width: 18rem;">
-      <img :src="enemyData.imgUrl" class="card-img-top" alt="..." />
+      <img :src="enemyData.imgUrl" class="card-img-top img-fluid" alt="..." />
       <div class="card-body">
         <h1>{{enemyData.name}}</h1>
         <div class="card-header">
@@ -10,6 +10,7 @@
           <p>{{enemyData.move3}}</p>
         </div>
       </div>
+      <button class="btn btn-warning" @click="deleteEnemy(enemyData.id)">DELETE</button>
     </div>
   </div>
 </template>
@@ -27,7 +28,11 @@ export default {
     //   this.$store.state.enemies;
     // }
   },
-  methods: {},
+  methods: {
+    deleteEnemy(id) {
+      this.$store.dispatch("deleteEnemy", this.enemyData.id);
+    }
+  },
   components: {}
 };
 </script>

@@ -4,7 +4,7 @@ $primary: #004b44;
 $secondary: #06ad00;
 $danger: #bcb2eb;
 $success: #c77121;
-$warning: #81807d;
+$warning: #e61616;
 $info: rgb(39, 51, 51);
 
 $blue: blue;
@@ -21,8 +21,7 @@ $white: white;
 $gray: gray;
 $gray-dark: darkslategray;
 
-$colors: (
-  "blue": $blue,
+$colors: ("blue": $blue,
   "indigo": $indigo,
   "purple": $purple,
   "pink": $pink,

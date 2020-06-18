@@ -66,6 +66,17 @@ export default new Vuex.Store({
       } catch (error) {
         console.error(error)
       }
+    },
+
+    async deleteEnemy({
+      dispatch
+    }, id) {
+      try {
+        let res = await api.delete('enemies/' + id)
+        dispatch("getEnemies")
+      } catch (error) {
+        console.error(error)
+      }
     }
 
   }
