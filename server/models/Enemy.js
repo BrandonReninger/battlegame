@@ -8,7 +8,7 @@ const Enemy = new Schema({
     },
     hp: {
         type: Number,
-        required: true
+        default: 100,
     },
     move1: {
         type: String,

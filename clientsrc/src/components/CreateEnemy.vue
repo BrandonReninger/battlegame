@@ -48,7 +48,7 @@
             type="text"
             name="imgUrl"
             placeholder="paste image url..."
-            v-model="newEnemy.eimgUrl"
+            v-model="newEnemy.imgUrl"
             required
           />
         </div>

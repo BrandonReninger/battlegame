@@ -4,6 +4,11 @@
       <img :src="enemyData.imgUrl" class="card-img-top" alt="..." />
       <div class="card-body">
         <h1>{{enemyData.name}}</h1>
+        <div class="card-header">
+          <p>{{enemyData.move1}}</p>
+          <p>{{enemyData.move2}}</p>
+          <p>{{enemyData.move3}}</p>
+        </div>
       </div>
     </div>
   </div>
