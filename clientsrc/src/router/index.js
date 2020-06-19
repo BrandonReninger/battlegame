@@ -4,12 +4,15 @@ import VueRouter from "vue-router";
 import Home from "../Pages/Home.vue";
 // @ts-ignore
 import Profile from "../Pages/Profile.vue";
-import { authGuard } from "@bcwdev/auth0-vue";
+// @ts-ignore
+import Battle from "../Pages/Battle.vue"
+import {
+  authGuard
+} from "@bcwdev/auth0-vue";
 
 Vue.use(VueRouter);
 
-const routes = [
-  {
+const routes = [{
     path: "/",
     name: "Home",
     component: Home,
@@ -20,6 +23,12 @@ const routes = [
     component: Profile,
     beforeEnter: authGuard,
   },
+  {
+    path: "battle",
+    name: "Battle",
+    component: Battle,
+    beforeEnter: authGuard
+  }
 ];
 
 const router = new VueRouter({

@@ -18,7 +18,8 @@ let api = Axios.create({
 export default new Vuex.Store({
   state: {
     profile: {},
-    enemies: []
+    enemies: [],
+    activeEnemy: {}
   },
   mutations: {
     setProfile(state, profile) {
@@ -26,6 +27,9 @@ export default new Vuex.Store({
     },
     setEnemies(state, enemies) {
       state.enemies = enemies
+    },
+    setActiveEnemy(state, activeEnemy) {
+      state.activeEnemy = activeEnemy
     }
   },
   actions: {
