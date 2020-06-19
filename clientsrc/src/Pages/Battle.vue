@@ -14,6 +14,7 @@ export default {
   },
   computed: {
     enemy() {
+      console.log("battle", this.$store.state.activeEnemy);
       return this.$store.state.activeEnemy;
     }
   },

@@ -81,6 +81,19 @@ export default new Vuex.Store({
       } catch (error) {
         console.error(error)
       }
+    },
+
+    async battle({
+      commit,
+      dispatch
+    }, enemyId) {
+      try {
+        debugger
+        let res = await api.get('enemies/' + enemyId)
+        commit('setActiveEnemy', res.data)
+      } catch (error) {
+        console.error(error)
+      }
     }
 
   }

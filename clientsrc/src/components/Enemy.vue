@@ -1,5 +1,5 @@
 <template>
-  <div class="Enemy col-3" @click="selectEnemy">
+  <div class="Enemy col-3" @click="selectEnemy()">
     <div class="card" style="width: 18rem;">
       <img :src="enemyData.imgUrl" class="card-img-top img-fluid" alt="..." />
       <div class="card-body">
@@ -34,7 +34,8 @@ export default {
     },
 
     selectEnemy() {
-      this.$store.commit("setActiveEnemy");
+      // this.$store.commit("setActiveEnemy");
+      this.$store.dispatch("battle");
       this.$router.push({
         name: "battle",
         params: { enemyId: this.enemyData.id }
