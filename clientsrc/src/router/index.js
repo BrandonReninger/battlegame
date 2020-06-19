@@ -24,8 +24,8 @@ const routes = [{
     beforeEnter: authGuard,
   },
   {
-    path: "battle",
-    name: "Battle",
+    path: "/battle/:enemyId",
+    name: "battle",
     component: Battle,
     beforeEnter: authGuard
   }

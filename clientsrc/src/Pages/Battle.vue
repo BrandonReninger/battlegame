@@ -1,5 +1,8 @@
 <template>
-  <div class="battle"></div>
+  <div class="battle">
+    <h1>{{enemy.name}}</h1>
+    <img :src="enemy.imgUrl" class="image-fluid" />
+  </div>
 </template>
 
 
@@ -9,7 +12,11 @@ export default {
   data() {
     return {};
   },
-  computed: {},
+  computed: {
+    enemy() {
+      return this.$store.state.activeEnemy;
+    }
+  },
   methods: {},
   components: {}
 };
