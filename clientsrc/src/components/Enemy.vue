@@ -35,7 +35,7 @@ export default {
 
     selectEnemy() {
       // this.$store.commit("setActiveEnemy");
-      this.$store.dispatch("battle");
+      this.$store.dispatch("battle", this.enemyData.id);
       this.$router.push({
         name: "battle",
         params: { enemyId: this.enemyData.id }
