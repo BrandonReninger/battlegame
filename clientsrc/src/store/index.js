@@ -94,6 +94,18 @@ export default new Vuex.Store({
       } catch (error) {
         console.error(error)
       }
+    },
+
+    async incrementEnemyHp({
+      commit,
+      dispatch
+    }, enemy) {
+      try {
+        let res = await api.put('enemies/' + enemy.id, enemy)
+
+      } catch (error) {
+        console.error(error)
+      }
     }
 
   }
