@@ -63,6 +63,7 @@ export default {
         user.hp -= 10;
       }
       enemy.hp -= 10;
+      this.$store.dispatch("incrementEnemyHp", this.enemy);
     },
 
     slap() {
@@ -75,6 +76,7 @@ export default {
         user.hp -= 10;
       }
       enemy.hp -= 20;
+      this.$store.dispatch("incrementEnemyHp", this.enemy);
     }
   },
   components: {}
