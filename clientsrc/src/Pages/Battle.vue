@@ -42,6 +42,14 @@ export default {
 
     punch() {
       computerChoice();
+      if (computerChoice == move1) {
+        user.hp--;
+      } else if (computerChoice == move2) {
+        user.hp -= 5;
+      } else if (computerChoice == move3) {
+        user.hp -= 10;
+      }
+      enemy.hp -= 5;
     }
   },
   components: {}
