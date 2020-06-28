@@ -88,7 +88,6 @@ export default new Vuex.Store({
       dispatch
     }, enemyId) {
       try {
-        debugger
         let res = await api.get('enemies/' + enemyId)
         commit('setActiveEnemy', res.data)
       } catch (error) {
@@ -102,7 +101,6 @@ export default new Vuex.Store({
     }, enemy) {
       try {
         let res = await api.put('enemies/' + enemy.id, enemy)
-
       } catch (error) {
         console.error(error)
       }
