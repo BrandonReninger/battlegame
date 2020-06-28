@@ -10,6 +10,14 @@ const User = new Schema({
         type: Number,
         default: 100
     },
+    wins: {
+        type: Number,
+        default: 0
+    },
+    losses: {
+        type: Number,
+        default: 0
+    }
 })
 
 export default User;
