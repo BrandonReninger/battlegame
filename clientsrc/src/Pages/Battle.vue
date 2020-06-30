@@ -12,10 +12,9 @@
           <button class="btn btn-warning" @click="slap()">Slap</button>
         </div>
       </div>
-      <!-- <div class="col-4">
-        <img :src="profile.picture" class="img-fluid" />
-        <h1>{{profile.name}}</h1>
-      </div>-->
+      <div class="col-2">
+        <h2>VS</h2>
+      </div>//ANCHOR cycle through players here and choose one
     </div>
   </div>
 </template>
@@ -31,6 +30,9 @@ export default {
     enemy() {
       console.log("battle", this.$store.state.activeEnemy);
       return this.$store.state.activeEnemy;
+    },
+    player() {
+      return this.$store.state.activeUser;
     }
     // profile() {
     //   return this.$store.state.profile;

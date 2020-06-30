@@ -19,7 +19,9 @@ export default new Vuex.Store({
   state: {
     profile: {},
     enemies: [],
-    activeEnemy: {}
+    activeEnemy: {},
+    users: [],
+    activeUser: {}
   },
   mutations: {
     setProfile(state, profile) {
@@ -30,6 +32,12 @@ export default new Vuex.Store({
     },
     setActiveEnemy(state, activeEnemy) {
       state.activeEnemy = activeEnemy
+    },
+    setUser(state, users) {
+      state.users = users
+    },
+    setActiveUser(state, activeUser) {
+      state.activeUser = activeUser
     }
   },
   actions: {
@@ -56,6 +64,17 @@ export default new Vuex.Store({
       try {
         let res = await api.get('enemies');
         commit("setEnemies", res.data)
+      } catch (error) {
+        console.error(error)
+      }
+    },
+
+    async getUser({
+      commit
+    }) {
+      try {
+        let res = await api.get('users')
+        commit("setUser", res.data)
       } catch (error) {
         console.error(error)
       }
