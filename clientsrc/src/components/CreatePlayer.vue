@@ -1,5 +1,6 @@
 <template>
   <div class="createPlayer">
+    <h3>Who you are</h3>
     <form @submit.prevent="createPlayer()">
       <div class="form-group">
         <label for="name">Enter Name:</label>
@@ -21,6 +22,7 @@
           required
         />
       </div>
+      <button class="btn btn-primary" type="submit">Create</button>
     </form>
   </div>
 </template>
@@ -30,10 +32,16 @@
 export default {
   name: "createPlayer",
   data() {
-    return {};
+    return {
+      newPlayer: {}
+    };
   },
   computed: {},
-  methods: {},
+  methods: {
+    createPlayer() {
+      this.$store.dispatch("createPlayer", this.newPlayer);
+    }
+  },
   components: {}
 };
 </script>

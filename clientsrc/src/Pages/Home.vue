@@ -3,6 +3,7 @@
     <h1>Welcome to Bad Person beatterupper</h1>
     <div class="row">
       <create-enemy></create-enemy>
+      <createPlayer></createPlayer>
     </div>
     <h2>Who do you want to fight?</h2>
     <div class="row">
@@ -14,6 +15,7 @@
 <script>
 import Enemy from "../components/Enemy";
 import CreateEnemy from "../components/CreateEnemy";
+import CreatePlayer from "../components/CreatePlayer";
 export default {
   name: "home",
   mounted() {
@@ -25,6 +27,6 @@ export default {
       return this.$store.state.enemies;
     }
   },
-  components: { CreateEnemy, Enemy }
+  components: { CreateEnemy, Enemy, CreatePlayer }
 };
 </script>

@@ -72,6 +72,16 @@ export default new Vuex.Store({
       }
     },
 
+    async createPlayer({
+      dispatch
+    }, newPlayer) {
+      try {
+        let res = await api.post('users', newPlayer)
+      } catch (error) {
+        console.error(error)
+      }
+    },
+
     async deleteEnemy({
       dispatch
     }, id) {
