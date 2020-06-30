@@ -1,7 +1,9 @@
 <template>
   <div class="home">
     <h1>Welcome to Bad Person beatterupper</h1>
-    <create-enemy></create-enemy>
+    <div class="row">
+      <create-enemy></create-enemy>
+    </div>
     <h2>Who do you want to fight?</h2>
     <div class="row">
       <Enemy v-for="enemy in enemies" :key="enemy._id" :enemyData="enemy"></Enemy>

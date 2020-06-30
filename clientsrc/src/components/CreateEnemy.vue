@@ -1,6 +1,6 @@
 <template>
-  <div class="createEnemy row justify-content-center">
-    <div class="col-6">
+  <div class="createEnemy justify-content-center">
+    <div class="col-6 ml-3">
       <form @submit.prevent="createEnemy()">
         <div class="form-group">
           <label for="name">Enter Name:</label>

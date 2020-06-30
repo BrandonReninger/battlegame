@@ -12,6 +12,10 @@
           <button class="btn btn-warning" @click="slap()">Slap</button>
         </div>
       </div>
+      <!-- <div class="col-4">
+        <img :src="profile.picture" class="img-fluid" />
+        <h1>{{profile.name}}</h1>
+      </div>-->
     </div>
   </div>
 </template>
@@ -28,6 +32,9 @@ export default {
       console.log("battle", this.$store.state.activeEnemy);
       return this.$store.state.activeEnemy;
     }
+    // profile() {
+    //   return this.$store.state.profile;
+    // }
   },
   methods: {
     computerChoice() {

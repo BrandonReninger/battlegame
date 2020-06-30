@@ -4,7 +4,11 @@ const Schema = mongoose.Schema;
 const User = new Schema({
     name: {
         type: String,
-        default: "You"
+        required: true
+    },
+    image: {
+        type: String,
+        required: true
     },
     hp: {
         type: Number,
