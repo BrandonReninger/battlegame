@@ -1,10 +1,10 @@
 <template>
-  <div class="player">
+  <div class="user">
     <div class="col-4">
       <div class="card" style="width: 18rem;">
-        <img :src="playerData.img" class="card-img-top img-fluid" alt />
+        <img :src="userData.img" class="card-img-top img-fluid" alt />
         <div class="card-body">
-          <h1>{{playerData.name}}</h1>
+          <h1>{{userData.name}}</h1>
         </div>
       </div>
     </div>
@@ -14,8 +14,8 @@
 
 <script>
 export default {
-  name: "player",
-  props: ["playerData"],
+  name: "user",
+  props: ["userData"],
   data() {
     return {};
   },

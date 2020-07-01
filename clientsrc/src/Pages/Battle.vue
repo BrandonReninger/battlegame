@@ -15,14 +15,14 @@
       <div class="col-2">
         <h2>VS</h2>
       </div>
-      <player v-for="user in users" :key="user._id" :userData="user"></player>
+      <user v-for="user in users" :key="user._id" :userData="user"></user>
     </div>
   </div>
 </template>
 
 
 <script>
-import Player from "../components/Player.vue";
+import User from "../components/User.vue";
 export default {
   name: "battle",
   data() {
@@ -97,7 +97,7 @@ export default {
       this.$store.dispatch("incrementEnemyHp", this.enemy);
     }
   },
-  components: { Player }
+  components: { User }
 };
 </script>
 
