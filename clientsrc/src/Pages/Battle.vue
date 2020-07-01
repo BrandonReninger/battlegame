@@ -14,25 +14,33 @@
       </div>
       <div class="col-2">
         <h2>VS</h2>
-      </div>//ANCHOR cycle through players here and choose one
+      </div>
+      <player v-for="user in users" :key="user._id" :userData="user"></player>
     </div>
   </div>
 </template>
 
 
 <script>
+import Player from "../components/Player.vue";
 export default {
   name: "battle",
   data() {
     return {};
   },
+
+  mounted() {
+    this.$store.dispatch("getUsers");
+  },
+
   computed: {
     enemy() {
       console.log("battle", this.$store.state.activeEnemy);
       return this.$store.state.activeEnemy;
     },
-    player() {
-      return this.$store.state.activeUser;
+    users() {
+      console.log("users", this.$store.state.users);
+      return this.$store.state.users;
     }
     // profile() {
     //   return this.$store.state.profile;
@@ -89,7 +97,7 @@ export default {
       this.$store.dispatch("incrementEnemyHp", this.enemy);
     }
   },
-  components: {}
+  components: { Player }
 };
 </script>
 

@@ -1,6 +1,6 @@
 <template>
   <div class="player">
-    <div class="col-3">
+    <div class="col-4">
       <div class="card" style="width: 18rem;">
         <img :src="playerData.img" class="card-img-top img-fluid" alt />
         <div class="card-body">

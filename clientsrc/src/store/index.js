@@ -33,7 +33,7 @@ export default new Vuex.Store({
     setActiveEnemy(state, activeEnemy) {
       state.activeEnemy = activeEnemy
     },
-    setUser(state, users) {
+    setUsers(state, users) {
       state.users = users
     },
     setActiveUser(state, activeUser) {
@@ -69,12 +69,12 @@ export default new Vuex.Store({
       }
     },
 
-    async getUser({
+    async getUsers({
       commit
     }) {
       try {
         let res = await api.get('users')
-        commit("setUser", res.data)
+        commit("setUsers", res.data)
       } catch (error) {
         console.error(error)
       }
