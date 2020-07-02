@@ -54,7 +54,7 @@ export class UsersController extends BaseController {
 
     async delete(req, res, next) {
         try {
-            let user = await usersService.delete(req.params.id)
+            let user = await usersService.delete(req.params.id, req.userInfo.email)
             res.send("deleted!")
         } catch (error) {
             console.error(error)

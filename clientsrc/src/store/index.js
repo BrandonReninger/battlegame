@@ -112,6 +112,17 @@ export default new Vuex.Store({
       }
     },
 
+    async deletePlayer({
+      dispatch
+    }, id) {
+      try {
+        let res = await api.delete('users/' + id)
+        dispatch("getUsers")
+      } catch (error) {
+        console.error(error)
+      }
+    },
+
     async battle({
       commit,
       dispatch
