@@ -25,6 +25,7 @@
 import User from "../components/User.vue";
 export default {
   name: "battle",
+  props: ["userData"],
   data() {
     return {};
   },
