@@ -80,6 +80,17 @@ export default new Vuex.Store({
       }
     },
 
+    async selectFighter({
+      commit
+    }, id) {
+      try {
+        let res = await api.get('users/' + id)
+        commit("setActiveUser", res.data)
+      } catch (error) {
+        console.error(error)
+      }
+    },
+
     async createEnemy({
       dispatch
     }, newEnemy) {

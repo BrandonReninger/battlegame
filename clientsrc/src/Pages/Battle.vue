@@ -15,6 +15,7 @@
       <div class="col-2">
         <h2>VS</h2>
       </div>
+      <h3>Choose your fighter</h3>
       <user v-for="user in users" :key="user._id" :userData="user"></user>
     </div>
   </div>
@@ -42,7 +43,7 @@ export default {
     users() {
       console.log("users", this.$store.state.users);
       return this.$store.state.users;
-    }
+    },
     // profile() {
     //   return this.$store.state.profile;
     // }
@@ -96,9 +97,9 @@ export default {
       }
       this.enemy.hp -= 20;
       this.$store.dispatch("incrementEnemyHp", this.enemy);
-    }
+    },
   },
-  components: { User }
+  components: { User },
 };
 </script>
 

@@ -1,5 +1,5 @@
 <template>
-  <div class="user">
+  <div class="user" @click="selectFighter()">
     <div class="col-4">
       <h1 class="text-center">{{userData.name}}</h1>
       <img :src="userData.image" class="img-fluid" />
@@ -22,9 +22,12 @@ export default {
     deletePlayer(playerId) {
       console.log(userData);
       this.$store.dispatch("deletePlayer", playerId);
-    }
+    },
+    selectFighter() {
+      this.$store.dispatch("selectFighter", this.userData.id);
+    },
   },
-  components: {}
+  components: {},
 };
 </script>
 
