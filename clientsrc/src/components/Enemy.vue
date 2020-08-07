@@ -30,6 +30,7 @@ export default {
   },
   methods: {
     deleteEnemy(id) {
+      // console.log("deleteEnemy", this.enemyData.id);
       this.$store.dispatch("deleteEnemy", this.enemyData.id);
     },
 
@@ -38,11 +39,11 @@ export default {
       this.$store.dispatch("battle", this.enemyData.id);
       this.$router.push({
         name: "battle",
-        params: { enemyId: this.enemyData.id }
+        params: { enemyId: this.enemyData.id },
       });
-    }
+    },
   },
-  components: {}
+  components: {},
 };
 </script>
 

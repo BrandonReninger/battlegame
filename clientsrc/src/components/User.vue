@@ -5,7 +5,7 @@
       <img :src="userData.image" class="img-fluid" />
       <h3>{{userData.name}}: {{userData.hp}}</h3>
     </div>
-    <button class="btn btn-warning" @click="deletePlayer(userData.id)">DELETE</button>
+    <button class="btn btn-warning" @click="deletePlayer()">DELETE</button>
   </div>
 </template>
 
@@ -20,8 +20,9 @@ export default {
   computed: {},
   methods: {
     deletePlayer(playerId) {
-      console.log(userData);
-      this.$store.dispatch("deletePlayer", playerId);
+      // console.log(userData);
+      if (confirm("Are you sure you want to delete?"))
+        this.$store.dispatch("deletePlayer", playerId.id);
     },
     selectFighter() {
       this.$store.dispatch("selectFighter", this.userData.id);
