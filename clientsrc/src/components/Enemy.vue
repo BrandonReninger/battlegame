@@ -35,12 +35,11 @@ export default {
     },
 
     selectEnemy() {
-      // this.$store.commit("setActiveEnemy");
-      if (deleteEnemy) {
-        this.$router.push({
-          name: "home",
-        });
-      }
+      // if (deleteEnemy) {
+      //   this.$router.push({
+      //     name: "home",
+      //   });
+      // }
       this.$store.dispatch("battle", this.enemyData.id);
       this.$router.push({
         name: "battle",
