@@ -29,7 +29,7 @@ export default {
     //     this.$store.dispatch("deletePlayer", this.userData.id);
     // },
     selectFighter() {
-      this.$store.dispatch("selectFighter", this.userData.id);
+      this.$store.dispatch("selectFighter", this.userData._id);
     },
   },
   components: {},

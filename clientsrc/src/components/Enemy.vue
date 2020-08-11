@@ -31,7 +31,7 @@ export default {
   methods: {
     deleteEnemy(id) {
       // console.log("deleteEnemy", this.enemyData.id);
-      this.$store.dispatch("deleteEnemy", this.enemyData.id);
+      this.$store.dispatch("deleteEnemy", this.enemyData._id);
     },
 
     selectEnemy() {
