@@ -22,7 +22,7 @@ export default {
     deletePlayer(playerId) {
       // console.log(userData);
       if (confirm("Are you sure you want to delete?"))
-        this.$store.dispatch("deletePlayer", playerId.id);
+        this.$store.dispatch("deletePlayer", this.playerId.id);
     },
     selectFighter() {
       this.$store.dispatch("selectFighter", this.userData.id);
