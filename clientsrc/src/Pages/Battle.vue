@@ -15,6 +15,10 @@
       <div class="col-2">
         <h2>VS</h2>
       </div>
+      <div class="col-4">
+        <h1 class="text-center">{{user.name}}</h1>
+        <img :src="user.image" class="img-fluid" />
+      </div>
     </div>
   </div>
 </template>

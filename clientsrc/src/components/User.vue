@@ -23,11 +23,6 @@ export default {
     },
   },
   methods: {
-    // deletePlayer() {
-    //   // console.log(userData);
-    //   if (confirm("Are you sure you want to delete?"))
-    //     this.$store.dispatch("deletePlayer", this.userData.id);
-    // },
     selectFighter() {
       this.$store.dispatch("selectFighter", this.userData._id);
     },

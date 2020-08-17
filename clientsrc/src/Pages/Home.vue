@@ -37,6 +37,16 @@ export default {
       return this.$store.state.users;
     },
   },
+  methods: {
+    startBattle() {
+      if (this.selectFighter && this.selectEnemy) {
+        this.$router.push({
+          name: "battle",
+          params: { enemyId: this.enemyData.id, userId: this.userData.id },
+        });
+      }
+    },
+  },
   components: { CreateEnemy, Enemy, CreatePlayer, User },
 };
 </script>

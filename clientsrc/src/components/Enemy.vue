@@ -35,16 +35,7 @@ export default {
     },
 
     selectEnemy() {
-      // if (deleteEnemy) {
-      //   this.$router.push({
-      //     name: "home",
-      //   });
-      // }
       this.$store.dispatch("battle", this.enemyData.id);
-      this.$router.push({
-        name: "battle",
-        params: { enemyId: this.enemyData.id },
-      });
     },
   },
   components: {},
