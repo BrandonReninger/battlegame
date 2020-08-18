@@ -2,8 +2,8 @@
   <div class="home">
     <h1>Welcome to Bad Person beatterupper</h1>
     <div class="row">
-      <create-enemy></create-enemy>
-      <createPlayer></createPlayer>
+      <Create-Enemy></Create-Enemy>
+      <CreatePlayer></CreatePlayer>
     </div>
     <h2>Who do you want to fight?</h2>
     <div class="row">
@@ -12,6 +12,9 @@
     <h2>Choose your player!</h2>
     <div class="row mt-3">
       <User v-for="user in users" :key="user._id" :userData="user"></User>
+    </div>
+    <div class="d-flex justify-content-center">
+      <button class="btn btn-primary btn-lg mt-3" type="button" @click="startBattle()">FIGHT!</button>
     </div>
   </div>
 </template>
