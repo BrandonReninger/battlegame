@@ -9,8 +9,8 @@
     <div class="row">
       <Enemy v-for="enemy in enemies" :key="enemy._id" :enemyData="enemy"></Enemy>
     </div>
-    <div class="row">
-      <h2>Choose your player!</h2>
+    <h2>Choose your player!</h2>
+    <div class="row mt-3">
       <User v-for="user in users" :key="user._id" :userData="user"></User>
     </div>
   </div>
@@ -39,7 +39,7 @@ export default {
   },
   methods: {
     startBattle() {
-      if (this.selectFighter && this.selectEnemy) {
+      if (selectFighter() && selectEnemy()) {
         this.$router.push({
           name: "battle",
           params: { enemyId: this.enemyData.id, userId: this.userData.id },

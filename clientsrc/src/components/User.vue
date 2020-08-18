@@ -1,9 +1,13 @@
 <template>
-  <div class="user" @click="selectFighter()">
-    <div class="col-4">
-      <h1 class="text-center">{{userData.name}}</h1>
-      <img :src="userData.image" class="img-fluid" />
-      <h3>{{userData.name}}: {{userData.hp}}</h3>
+  <div class="user">
+    <div class="col-3 pointer" @click="selectFighter()">
+      <div class="card border" style="width: 18rem">
+        <img :src="userData.image" class="img-fluid" />
+        <div class="card-body">
+          <h1 class="text-center">{{userData.name}}</h1>
+        </div>
+        <h3>{{userData.name}}: {{userData.hp}}</h3>
+      </div>
     </div>
     <!-- <button class="btn btn-warning" @click="deletePlayer(userData.id)">DELETE</button> -->
   </div>
@@ -33,4 +37,7 @@ export default {
 
 
 <style scoped>
+.pointer {
+  cursor: pointer;
+}
 </style>
