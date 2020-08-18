@@ -84,7 +84,6 @@ export default new Vuex.Store({
       commit
     }, id) {
       try {
-        debugger
         let res = await api.get('users/' + id)
         commit("setActiveUser", res.data)
       } catch (error) {
