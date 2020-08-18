@@ -11,7 +11,7 @@
     </div>
     <div class="row">
       <h2>Choose your player!</h2>
-      <user v-for="user in users" :key="user._id" :userData="user"></user>
+      <User v-for="user in users" :key="user._id" :userData="user"></User>
     </div>
   </div>
 </template>

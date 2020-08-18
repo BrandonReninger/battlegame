@@ -9,8 +9,8 @@ export class UsersController extends BaseController {
     constructor() {
         super("api/users");
         this.router
-            .use(auth0Provider.getAuthorizedUserInfo)
             .get("", this.getAll)
+            .use(auth0Provider.getAuthorizedUserInfo)
             .get("/:id", this.getById)
             .post("", this.create)
             .delete("/:id", this.delete)
