@@ -14,7 +14,11 @@
       <User v-for="user in users" :key="user._id" :userData="user"></User>
     </div>
     <div class="d-flex justify-content-center">
-      <button class="btn btn-primary btn-lg mt-3" type="button" @click="startBattle()">FIGHT!</button>
+      <button
+        class="btn btn-primary btn-lg mt-3"
+        type="button"
+        v-on="{ click: [selectEnemy, selectFighter]}"
+      >FIGHT!</button>
     </div>
   </div>
 </template>
@@ -40,16 +44,7 @@ export default {
       return this.$store.state.users;
     },
   },
-  methods: {
-    startBattle() {
-      if (selectFighter() && selectEnemy()) {
-        this.$router.push({
-          name: "battle",
-          params: { enemyId: this.enemyData.id, userId: this.userData.id },
-        });
-      }
-    },
-  },
+  methods: {},
   components: { CreateEnemy, Enemy, CreatePlayer, User },
 };
 </script>

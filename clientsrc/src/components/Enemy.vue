@@ -38,6 +38,13 @@ export default {
 
     selectEnemy() {
       this.$store.dispatch("battle", this.enemyData.id);
+      NOTE; //when selectEnemy and selectFighter have both been triggered then route to battle needs to initiate
+      if (selectEnemy() && selectFighter()) {
+        this.$router.push({
+          name: "battle",
+          params: { enemyId: this.enemyData.id, userId: this.userData.id },
+        });
+      }
     },
   },
   components: {},
